@@ -123,47 +123,47 @@ background-color: lime;
 
 .tile.mined[data-type="diamond"] {
   background-color: #d0ffff;
-  border-radius: 50%;
+  border-radius: 3px;
 }
 
 .tile.mined[data-type="gold"] {
   background: linear-gradient(135deg, gold, orange);
-  border-radius: 50%;
+  border-radius: 3px;
 }
 
 .tile.mined[data-type="silver"] {
   background: linear-gradient(135deg, f8fefe, f0f0f0);
-  border-radius: 50%;
+  border-radius: 3px;
 }
 
 .tile.mined[data-type="ore"] {
   background-color: #ff870f;
-  border-radius: 50%;
+  border-radius: 3px;
 }
 
 .tile.mined[data-type="stone"] {
   background-color: #cdbebe;
-  border-radius: 50%;
+  border-radius: 3px;
 }
 
 .tile.mined[data-type="clay"] {
   background-color: #e3ab76;
-  border-radius: 50%;
+  border-radius: 3px;
 }
 
 .tile.mined[data-type="bone"] {
   background-color: #faf6d8;
-  border-radius: 50%;
+  border-radius: 3px;
 }
 
 .tile.mined[data-type="dirt"] {
   background-color: #5f4d46;
-  border-radius: 50%;
+  border-radius: 3px;
 }
 
 .tile.mined[data-type="rock"] {
   background-color: #272121;
-  border-radius: 50%;
+  border-radius: 3px;
 }
 
 /* SCREEN SHADOW OUTLINE STYLING */
