@@ -78,6 +78,7 @@ background-color: lime;
   padding: 6px 12px;
   border-radius: 6px;
   font-size: 16px;
+  text-align: left;
   color: #4dd;
   font-family: monospace;
 }
