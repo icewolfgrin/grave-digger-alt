@@ -58,6 +58,27 @@ function centerCameraOnPlayer() {
   }
 }
 
+/* CAMERA SMOOTHING */
+
+function smoothScroll(element, startX, endX, startY, endY, duration = 150) {
+  const startTime = performance.now();
+
+  function animate(time) {
+    const progress = Math.min((time - startTime) / duration, 1);
+    const ease = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+
+    element.scrollLeft = startX + (endX - startX) * ease;
+    element.scrollTop = startY + (endY - startY) * ease;
+
+    if (progress < 1) requestAnimationFrame(animate);
+  }
+
+  requestAnimationFrame(animate);
+}
+
+
+
+
 /* PLAYER MOVEMENT CONTROLS */
 
 let moveInterval = null;
