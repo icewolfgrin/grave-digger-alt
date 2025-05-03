@@ -36,14 +36,25 @@ function updatePlayerPosition() {
   if (tile) tile.classList.add("player");
 }
 
+/* CAMERA BEHAVIOUR */
+
 function centerCameraOnPlayer() {
-  const tile = document.querySelector(`.tile[data-x="${player.x}"][data-y="${player.y}"]`);
-  if (tile) {
-    tile.scrollIntoView({
-      behavior: "smooth",
-      block: "center",
-      inline: "center"
-    });
+  const wrapper = document.getElementById("game-wrapper");
+  const playerTile = document.querySelector(`.tile[data-x="${player.x}"][data-y="${player.y}"]`);
+
+  if (wrapper && playerTile) {
+    const wrapperRect = wrapper.getBoundingClientRect();
+    const tileRect = playerTile.getBoundingClientRect();
+
+    const currentScrollLeft = wrapper.scrollLeft;
+    const currentScrollTop = wrapper.scrollTop;
+
+    const targetScrollLeft =
+      currentScrollLeft + tileRect.left - wrapperRect.left - wrapper.clientWidth / 2 + tileRect.width / 2;
+    const targetScrollTop =
+      currentScrollTop + tileRect.top - wrapperRect.top - wrapper.clientHeight / 2 + tileRect.height / 2;
+
+    smoothScroll(wrapper, currentScrollLeft, targetScrollLeft, currentScrollTop, targetScrollTop);
   }
 }
 
