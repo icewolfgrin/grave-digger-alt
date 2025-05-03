@@ -2,3 +2,19 @@
   <h1>GRAVE DIGGER</h1>
   <p>Press Enter</p>
 </div>
+<div id="version-info">Loading version...</div>
+
+<script>
+  fetch("https://api.github.com/repos/Psych-DF/minetown/commits/main")
+    .then(res => res.json())
+    .then(data => {
+      const date = new Date(data.commit.committer.date);
+      document.getElementById("version-info").textContent =
+        "Last deployed: " + date.toLocaleString();
+    })
+    .catch(err => {
+      document.getElementById("version-info").textContent = "Version info unavailable.";
+      console.error(err);
+    });
+</script>
+
