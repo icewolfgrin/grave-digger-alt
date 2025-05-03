@@ -15,8 +15,6 @@ export function initGame() {
 
 
   // Reset state
-  player.x = 20;
-  player.y = 0;
   player.ore = 0;
   oreDisplay.textContent = "0";
   gameContainer.innerHTML = "";
